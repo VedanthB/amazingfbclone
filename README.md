@@ -1,2 +1,2 @@
 # amazingfbclone
-An Amaznig Facebook Clone!
+An Amazing Facebook Clone!

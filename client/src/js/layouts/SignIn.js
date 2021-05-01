@@ -12,7 +12,7 @@ const SignIn = () => {
               Email
             </label>
             <input
-              className="signin__input outline-none px-4 py-2 w-full border-2 border-light-secondary focus-within:border-light-primary rounded"
+              className="signin__input transition-all outline-none px-4 py-2 w-full border-2 border-light-secondary focus-within:border-light-primary rounded"
               type="email"
               name="email"
               placeholder="harry@hogwarts.com"
@@ -23,14 +23,24 @@ const SignIn = () => {
               Password
             </label>
             <input
-              className="signin__input outline-none px-4 py-2 w-full border-2 border-light-secondary focus-within:border-light-primary rounded"
+              className="signin__input transition-all outline-none px-4 py-2 w-full border-2 border-light-secondary focus-within:border-light-primary rounded"
               type="password"
               placeholder="Expecto Patronum"
             />
           </div>
         </div>
+        <div className="signin__remember-me flex items-center mt-4">
+          <input
+            type="checkbox"
+            className="focus:outline-none active:outline-none"
+            name="remember"
+          />
+          <label htmlFor="remember" className="ml-1">
+            Remember Me
+          </label>
+        </div>
         <div className="signin__cta mt-4">
-          <button className="px-6 py-2 bg-light-primary rounded text-white font-bold">
+          <button className="px-6 py-2 bg-light-primary transition-all rounded text-white font-bold focus:outline-none active:outline-none">
             Sign In
           </button>
         </div>

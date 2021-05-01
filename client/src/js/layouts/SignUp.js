@@ -18,7 +18,7 @@ const SignUp = () => {
               placeholder="Severus Snape"
             />
           </div>
-          <div className="signup__input-wrapper">
+          <div className="signup__input-wrapper mt-4">
             <label htmlFor="email" className="block text-lg lg:text-xl">
               Email
             </label>
@@ -41,7 +41,7 @@ const SignUp = () => {
           </div>
         </div>
         <div className="signup__cta mt-4">
-          <button className="px-6 py-2 bg-light-primary rounded text-white font-bold">
+          <button className="px-6 py-2 bg-light-primary rounded text-white font-bold focus:outline-none active:outline-none">
             Sign Up
           </button>
         </div>

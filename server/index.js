@@ -11,6 +11,7 @@ app.use(express.json())
 app.use(cors())
 app.use(cookieParser())
 
+const authRouter = app.use('/api/auth',require('./Routes/auth.routes'))
 
 const PORT = 5000
 app.listen(PORT, () => {

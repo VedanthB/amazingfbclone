@@ -8,7 +8,6 @@ const jwt = require("jsonwebtoken");
 
 //*SIGNUP
 router.post('/signup', async(req, res) => {
-  console.log('here')
   const username = req.body.username
   const password = req.body.password
   const rePassword = req.body.rePassword
@@ -53,7 +52,7 @@ router.post('/login', async(req, res) => {
 
 
     const isUserPasswordCorrect = await bcrypt.compare(userPassword,getUserHashedPasswordQuery.rows[0].user_hashedpassword)
-
+    console.log(userPassword)
     if(!isUserPasswordCorrect) return res.status(401).json({message: 'Please enter the correct password'})
 
     const signToken = jwt.sign(
@@ -65,11 +64,12 @@ router.post('/login', async(req, res) => {
     )
     
     shouldRememberUser ? (
-      res.cookie('authenticationToken', signToken, { httpOnly: true, expires: 2*60*60*1000 }).json({isUserLoggedIn: true})
+      res.cookie('authenticationToken', signToken, { httpOnly: true, maxAge: 2*60*60*1000 }).json({wasAuthenticated: true})
     ) : (
-      res.cookie('authenticationToken', signToken, { httpOnly: true }).json({isUserLoggedIn: true})
+      res.cookie('authenticationToken', signToken, { httpOnly: true }).json({wasAuthenticated: true})
     )
   } catch(err) {
+    console.log(err.message)
     res.status(400).json({message: err.message})
   }
 })

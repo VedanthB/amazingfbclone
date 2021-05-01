@@ -1,7 +1,13 @@
 import React from 'react';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 const App = () => {
-  return <div>Amazing Facebook Clone</div>;
+  return (
+    <HashRouter>
+      <Route path="/signin" component={SignIn} />
+      <Route path="/signup" component={SignUp} />
+    </HashRouter>
+  );
 };
 
 export default App;

@@ -1,6 +1,6 @@
 module.exports = {
   plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
+    tailwindcss: {}, // Enables us to use Tailwind css
+    autoprefixer: {}, // Makes sure all browsers like IE, Mozilla, etc. are supported.
   },
 };
